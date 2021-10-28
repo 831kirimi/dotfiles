@@ -3,5 +3,5 @@
 
 ```sh
 cd dotfiles
-install.sh
+./install.sh
 ```
