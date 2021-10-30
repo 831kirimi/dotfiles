@@ -47,7 +47,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 
 # keybind
-bindkey -v
+bindkey -e
 
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
@@ -60,7 +60,7 @@ bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 
 # cdしたときlsもする
-chpwd() {ls}
+#chpwd() {ls}
 
 # golang
 export GOPATH=$HOME/go
