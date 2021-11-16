@@ -7,3 +7,6 @@
 [submodule ".zinit/plugins/zdharma---fast-syntax-highlighting"]
 	path = .zinit/plugins/zdharma---fast-syntax-highlighting
 	url = git@github.com:zdharma-continuum/fast-syntax-highlighting.git
+[submodule ".zinit/bin"]
+	path = .zinit/bin
+	url = git@github.com:zdharma-continuum/zinit.git
