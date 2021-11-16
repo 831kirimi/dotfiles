@@ -1,3 +1,9 @@
 [submodule ".powerlevel10k"]
 	path = .powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+[submodule ".zinit/plugins/zsh-users---zsh-autosuggestions"]
+	path = .zinit/plugins/zsh-users---zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule ".zinit/plugins/zdharma---fast-syntax-highlighting"]
+	path = .zinit/plugins/zdharma---fast-syntax-highlighting
+	url = git@github.com:zdharma-continuum/fast-syntax-highlighting.git

@@ -40,11 +40,24 @@ alias sl='ls'
 alias ll='ls -l'
 alias la='ls -a'
 
+# # 補完機能有効にする
+ autoload -U compinit
+ compinit -u
+#  
+#  # 補完候補に色つける
+  autoload -U colors
+  colors
+  zstyle ':completion:*' list-colors "${LS_COLORS}"
+
 # 補完
 zinit light zsh-users/zsh-autosuggestions
 
 # シンタックスハイライト
 zinit light zdharma/fast-syntax-highlighting
+
+#autoload colors
+#colors
+#export LS_COLORS='di=01;34:ln=01;36:so=01;32:pi=01;33:ex=01;31:bd=01;46;34:cd=01;43;34:su=01;41;30:sg=01;46;30:tw=01;42;30:ow=01;43;30'
 
 # keybind
 bindkey -e
@@ -53,6 +66,7 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zmodload zsh/complist
 bindkey -M menuselect '^h' vi-backward-char
 bindkey -M menuselect '^j' vi-down-line-or-history
@@ -60,7 +74,22 @@ bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 
 # cdしたときlsもする
-#chpwd() {ls}
+chpwd() {ls}
+
+#   # 単語の入力途中でもTab補完を有効化
+   setopt complete_in_word
+#   # 補完候補をハイライト
+   zstyle ':completion:*:default' menu select=1
+#   # キャッシュの利用による補完の高速化
+   zstyle ':completion::complete:*' use-cache true
+#   # 大文字、小文字を区別せず補完する
+   zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+#   # 補完リストの表示間隔を狭くする
+   setopt list_packed
+#    
+#    # コマンドの打ち間違いを指摘してくれる
+#    setopt correct
+#    SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 
 # golang
 export GOPATH=$HOME/go
