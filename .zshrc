@@ -40,6 +40,8 @@ alias ls='ls --color=auto'
 alias sl='ls'
 alias ll='ls -l'
 alias la='ls -a'
+alias python='python3'
+alias pip='pip3'
 
 # # 補完機能有効にする
  autoload -U compinit
@@ -75,7 +77,7 @@ bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
 
 # cdしたときlsもする
-chpwd() {ls -a}
+chpwd() {ls}
 
 #   # 単語の入力途中でもTab補完を有効化
    setopt complete_in_word
@@ -92,7 +94,3 @@ chpwd() {ls -a}
 #    setopt correct
 #    SPROMPT="correct: $RED%R$DEFAULT -> $GREEN%r$DEFAULT ? [Yes/No/Abort/Edit] => "
 
-# golang
-export GOPATH=$HOME/go
-export PATH=$PATH:/usr/lib/go-1.10/bin
-export PATH=$PATH:$GOPATH/bin
